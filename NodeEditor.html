@@ -1,0 +1,40 @@
+<canvas id="nodeEditorCanvas" width="750" height="550" style="border:1px solid #000000;"/>
+
+<script>
+    var canvas = document.getElementById("nodeEditorCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.font="30px Arial";
+    ctx.textAlign="center";
+
+    function SetColor(color){
+        ctx.fillStyle = color;
+    }
+
+    function DrawRect(x,y,sizeX,sizeY) {
+        ctx.fillRect(x,y,x+sizeX,y+sizeY);
+    }
+    function DrawLine(fromX,fromY,toX,toY){
+        ctx.moveTo(fromX,fromY);
+        ctx.lineTo(toX,toY);
+        ctx.stroke();
+        ctx.moveTo(0,0);
+    }
+    function DrawCircle(x,y,radius){
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI);
+        ctx.stroke();
+        ctx.moveTo(0,0);
+    }
+    function DrawText(x,y,text){
+        ctx.fillText(text,x,y);
+    }
+</script>
+
+<script>
+    SetColor("black");
+    DrawRect(100,100,100,30);
+    SetColor("red");
+    DrawLine(100,100,200,130);
+
+</script>
+
